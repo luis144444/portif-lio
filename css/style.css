@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Modo escuro padrão */
+body {
+  background: url('../img/bg-mobile.jpg') no-repeat top center/cover;
+  height: 100vh;
+}
+
+body * {
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+#container {
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* switch */
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white url('../img/moon-stars.svg') no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-back 0.25s;
+}
+
+.light #switch button {
+  animation: slide-in 0.25s forwards;
+  background: white url('../img/sun.svg') no-repeat center;
+}
+
+#switch button:hover {
+  outline: 8px solid rgba(255, 255, 255, 0.2);
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.light #switch span {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+/* links */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1.5px solid white;
+}
+
+.light ul li a {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.light ul li a:hover {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1.5px solid black;
+}
+
+/* social links */
+#social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  font-size: 24px;
+}
+
+#social-links a {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.light #social-links a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  border: 3px solid #FF5627;
+}
+
+.light .profile-photo {
+  border: 3px solid #4B55EA;
+}
+
+.light p,
+.light a,
+.light ion-icon {
+  color: black;
+}
+
+/* media queries - PARA Responsividade */
+@media (min-width: 700px) {
+  body {
+    background: url('../img/bg-desktop.jpg') no-repeat top center/cover;
+  }
+
+  body.light {
+    background: url('../img/bg-desktop-light.jpg') no-repeat top center/cover;
+  }
+}
+
+/* animações */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
